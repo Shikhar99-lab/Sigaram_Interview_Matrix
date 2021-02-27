@@ -1,257 +1,225 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [color1, setColor1] = useState("blue");
-  const [color2, setColor2] = useState("blue");
-  const [color3, setColor3] = useState("blue");
-  const [color4, setColor4] = useState("blue");
-  const [color5, setColor5] = useState("blue");
-  const [color6, setColor6] = useState("blue");
-  const [color7, setColor7] = useState("blue");
-  const [color8, setColor8] = useState("blue");
-  const [color9, setColor9] = useState("blue");
-  const [color10, setColor10] = useState("blue");
-  const [color11, setColor11] = useState("blue");
-  const [color12, setColor12] = useState("blue");
-  const [color13, setColor13] = useState("blue");
-  const [color14, setColor14] = useState("blue");
-  const [color15, setColor15] = useState("blue");
-  const [color16, setColor16] = useState("blue");
+  const [clicked, setClicked] = useState([]);
+  const pushLogic = (i) => {
+    let newArray = [...clicked];
+    if(newArray.includes(i))
+    {
+      return;
+    }
+    if (newArray.length === 2) {
+      newArray.splice(0, 1);
+    }
+    newArray.push(i);
+    setClicked(newArray);
+  };
+  useEffect(()=>{
+    console.log(clicked);
+  },[clicked])
   return (
     <div className="App">
       <header className="App-header">
         <div>
           <div
+            onClick={() => {
+              pushLogic(0);
+            }}
             style={{
               height: "100px",
               width: "100px",
-              background: color1,
+              background: clicked.includes(0)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color1 === "blue") setColor1("red");
-              if (color15 === "red") setColor15("blue");
-              if (color3 === "red") setColor3("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(1);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color2,
+              background: clicked.includes(1)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color2 === "blue") setColor2("red");
-              if (color16 === "red") setColor16("blue");
-              if (color4 === "red") setColor4("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(2);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color3,
+              background: clicked.includes(2)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color3 === "blue") setColor3("red");
-              if (color1 === "red") setColor1("blue");
-              if (color5 === "red") setColor5("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(3);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color4,
+              background: clicked.includes(3)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color4 === "blue") setColor4("red");
-              if (color2 === "red") setColor2("blue");
-              if (color6 === "red") setColor6("blue");
-            }}
-          ></div>
+          />
         </div>
         <div>
           <div
+          onClick={() => {
+            pushLogic(4);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color5,
+              background: clicked.includes(4)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color5 === "blue") setColor5("red");
-              if (color3 === "red") setColor3("blue");
-              if (color7 === "red") setColor7("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(5);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color6,
+              background: clicked.includes(5)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color6 === "blue") setColor6("red");
-              if (color4 === "red") setColor4("blue");
-              if (color8 === "red") setColor8("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(6);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color7,
+              background: clicked.includes(6)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color7 === "blue") setColor7("red");
-              if (color5 === "red") setColor5("blue");
-              if (color9 === "red") setColor9("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(7);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color8,
+              background: clicked.includes(7)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color8 === "blue") setColor8("red");
-              if (color6 === "red") setColor6("blue");
-              if (color10 === "red") setColor10("blue");
-            }}
-          ></div>
+          />
         </div>
         <div>
           <div
+          onClick={() => {
+            pushLogic(8);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color9,
+              background: clicked.includes(8)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color9 === "blue") setColor9("red");
-              if (color7 === "red") setColor7("blue");
-              if (color11 === "red") setColor11("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(9);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color10,
+              background: clicked.includes(9)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color10 === "blue") setColor10("red");
-              if (color8 === "red") setColor8("blue");
-              if (color12 === "red") setColor12("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(10);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color11,
+              background: clicked.includes(10)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color11 === "blue") setColor11("red");
-              if (color9 === "red") setColor9("blue");
-              if (color13 === "red") setColor13("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(11);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color12,
+              background: clicked.includes(11)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color12 === "blue") setColor12("red");
-              if (color10 === "red") setColor10("blue");
-              if (color14 === "red") setColor14("blue");
-            }}
-          ></div>
+          />
         </div>
         <div>
           <div
+          onClick={() => {
+            pushLogic(12);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color13,
+              background: clicked.includes(12)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color13 === "blue") setColor13("red");
-              if (color11 === "red") setColor11("blue");
-              if (color15 === "red") setColor15("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(13);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color14,
+              background: clicked.includes(13)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color14 === "blue") setColor14("red");
-              if (color12 === "red") setColor12("blue");
-              if (color16 === "red") setColor16("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(14);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color15,
+              background: clicked.includes(14)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color15 === "blue") setColor15("red");
-              if (color13 === "red") setColor13("blue");
-              if (color1 === "red") setColor1("blue");
-            }}
-          ></div>
+          />
           <div
+          onClick={() => {
+            pushLogic(15);
+          }}
             style={{
               height: "100px",
               width: "100px",
-              background: color16,
+              background: clicked.includes(15)?"red":"blue",
               display: "inline-block",
               margin: "10px",
             }}
-            onClick={() => {
-              if (color16 === "blue") setColor16("red");
-              if (color14 === "red") setColor14("blue");
-              if (color2 === "red") setColor2("blue");
-            }}
-          ></div>
+          />
         </div>
       </header>
     </div>
